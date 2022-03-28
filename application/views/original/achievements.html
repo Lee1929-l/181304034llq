@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>温州产教融合校企对接平台</title>
+
+  <link rel="stylesheet" href="/templates/main/css/base.css">
+  <link rel="stylesheet" href="/templates/main/css/index.css">
+  <!--<style>
+    .h-rig-nav a.active2{border-bottom-color: #e97212;}
+  </style>-->
+  <script src="/templates/main/js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="whole">
+  <script src="/templates/main/  "></script>
+<!--分享-->
+<script>
+  window._bd_share_config = {
+    common: {
+  },
+  share: [{
+    "tag": "share_1"
+  }]
+}
+with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+
+
+<script type="text/javascript">
+  $.ajax({
+    type: "POST",
+    url: "/tools/submit_ajax.ashx?action=user_check_login",
+    dataType: "json",
+    timeout: 20000,
+    success: function (data, textStatus) {
+      console.log(data);
+      if (data.status == 1) {
+        $(".h-rig-top").prepend("<span>" + data.username + '</span><a href="/index/exit.html">[退出登录]</a>');
+      } else {
+        $(".h-rig-top").prepend('<a href="/register.html">注册</a>');
+        $(".h-rig-top").prepend('<span></span>');
+        $(".h-rig-top").prepend('<a href="/login.html">登录</a>');
+      }
+    }
+  });
+</script>
+
+<div class="header-wrap">
+  <div class="header-top"></div>
+  <div class="header clearfix">
+    <!--logo-->
+    <div class="h-logo fl"><a href="/index.html"><img src="/templates/main/images/logo.png" alt=""></a></div>
+
+    <div class="h-rig fr">
+      <!--右边头部-->
+      <div class="h-rig-top fr">
+        <!--<a href="">注册</a>
+        <span></span>
+        <a href="">登录</a>-->
+      </div>
+      <div class="clear"></div>
+      <!--右边导航-->
+      <div class="h-rig-nav fr">
+        <a class="active1" href="/index.html">网站首页</a>
+        <span></span>
+        <a class="active2" href="/achievements.html">成果库</a>
+        <span></span>
+        <a class="active3" href="/demand.html">需求库</a>
+        <span></span>
+        <a class="active4" href="/expert.html">专家库</a>
+        <span></span>
+        <a class="active5" href="/equipment.html">设备库</a>
+        <span></span>
+        <a class="active6" href="/patent.html">专利库</a>
+        <span></span>
+        <a class="active7" href="/company.html">创业孵化</a>
+        <span></span>
+        <a class="active8" href="/news.html">科技资讯</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--banner-->
+  <div class="banner2" style="background:url('/templates/main/images/banner_01.png') 50% 0 no-repeat;">
+      <script type="text/javascript">
+  function trySet(obj, txt) {
+    if (obj.value == "") {
+      obj.value = txt;
+    }
+  }
+  function tryClear(obj, txt) {
+    if (obj.value == txt) {
+      obj.value = '';
+    }
+  }
+  function Check(key) {
+    if (key == "" || key == "关键字搜索") {
+      alert('您还未关键字搜索');
+      return false;
+    }
+    else
+    { return true; }
+  }
+  function SiteSearchs(send_url, divTgs) {
+
+    var str = $.trim($(divTgs).val());
+    if (str.length > 0 && str != "输入关健字") {
+      window.location.href = send_url + "?keyword=" + encodeURI($(divTgs).val());
+    }
+    return false;
+  }
+
+  function SiteSearchs2(send_url, d1,d2,d3) {
+
+    var str1 = $.trim($(d1).val());
+    var str2 = $.trim($(d2).val());
+    var str3 = $.trim($(d3).val());
+    var link1 = "";
+    if (str3.length > 0) {
+      link1 += "keyword3=" + encodeURI(str3);
+
+      if (str1.length > 0) {
+        link1 += "&keyword1=" + encodeURI(str1);
+      } else { return false; }
+      if (str2.length > 0) {
+        link1 += "&keyword2=" + encodeURI(str2);
+      }
+
+      window.location.href = send_url + "?" + link1;
+    }
+    return false;
+  }
+
+</script>
+<div class="ban-nav-wrap">
+  <div class="ban-nav clearfix">
+      <div class="p1">资源查找</div>
+      <div class="p2">
+          <p class="clearfix"><span>按分类查找</span><i></i></p>
+          <ul class="ul1">
+              <li><span class="成果库">成果库</span></li>
+              <li><span class="需求库">需求库</span></li>
+              <li><span class="专家库">专家库</span></li>
+              <li><span class="设备库">设备库</span></li>
+              <li><span class="专利库">专利库</span></li>
+          </ul>
+      </div>
+      <div class="p3">
+          <input type="text" id="key1">
+      </div>
+
+      <div class="p2">
+          <p class="clearfix"><span>按领域查找</span><i></i></p>
+          <ul class="ul1">
+            
+              <li><span class="23">现代农业</span></li>
+            
+              <li><span class="24">材料工程</span></li>
+            
+              <li><span class="25">机械装备</span></li>
+            
+              <li><span class="26">信息技术</span></li>
+            
+              <li><span class="27">食品营养</span></li>
+            
+              <li><span class="28">服装纺织</span></li>
+            
+              <li><span class="29">能源环保</span></li>
+            
+              <li><span class="30">电子电气</span></li>
+            
+              <li><span class="31">化学工程</span></li>
+            
+              <li><span class="32">绿色建筑</span></li>
+            
+              <li><span class="33">生物医药</span></li>
+            
+              <li><span class="34">海洋资源</span></li>
+            
+              <li><span class="35">其他</span></li>
+            
+          </ul>
+      </div>
+      <div class="p3">
+          <input type="text" id="key2">
+      </div>
+
+      <div class="p4">
+          <p><span>关键字：</span></p>
+      </div>
+      <div class="p5">
+          <input type="text" id="key3">
+      </div>
+      <div class="p6" onclick="SiteSearchs2('/krp/search.html', '#key1', '#key2', '#key3');">
+          <a href="javascript:void(0)"><img src="/templates/main/images/a02.png" alt=""><span>查找</span></a>
+      </div>
+  </div>
+</div>
+<!--
+<div class="header-nav-right">
+  <input id="keywords" type="text" class="text" placeholder="请输入关键字搜索" onkeydown="if(event.keyCode==13)SiteSearchs('/krp/search.html', '#keywords');">
+  <span class="button" onclick="SiteSearchs('/krp/search.html', '#keywords');"></span>
+</div>-->
+<script type="text/javascript">
+  $(function () {
+    /*资源查找*/
+    if ($(".ban-nav .p2")) {
+      $(".ban-nav .p2").hover(function () {
+      }, function () {
+        $(this).find("ul").slideUp().removeClass("active");
+      });
+      $(".ban-nav .p2 > p").click(function () {
+        if ($(this).next("ul").hasClass("active")) {
+          $(this).next("ul").slideUp().removeClass("active");
+        } else {
+          $(this).next("ul").slideDown().addClass("active");
+        }
+      });
+      $(".ban-nav .p2 ul li").click(function () {
+        $(this).parent().prev("p").find("span").html($(this).find("span").html());
+        $(this).parent().parent().next().find("input")[0].value = $(this).find("span")[0].className;
+      });
+    }
+  });
+</script>
+  </div>
+  <!--内容-->
+  <div class="con-wrap">
+        <div class="con9">
+            <div class="h34"></div>
+            <div class="con9-tit">
+                <!--成果库52-->
+                <b>成果库</b>
+                <p>
+                    <a href="/index.html">网站首页</a>
+                    <span>></span>
+                    <a class="active" href="javascript:void(0)">成果库</a>
+                </p>
+                <a class="rig" href="/chengguoLib.html">我要发布</a>
+            </div>
+            <div class="h6"></div>
+            <div class="con9-con">
+                <div class="con9-con-tit">
+                    
+                      
+                    <div class="con9-con-tit-1 bb-do  clearfix">
+                    
+                        <div class="lef"><span>技术领域：</span></div>
+                        <div class="rig">
+                        
+                          <a class="active" href="/achievements.html?category_id=0&s_8=0">全部</a>
+                          
+                          <a href="/achievements.html?category_id=0&s_8=23">现代农业</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=24">材料工程</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=25">机械装备</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=26">信息技术</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=27">食品营养</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=28">服装纺织</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=29">能源环保</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=30">电子电气</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=31">化学工程</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=32">绿色建筑</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=33">生物医药</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=34">海洋资源</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_8=35">其他</a>
+                        
+                        </div>
+                    </div>
+                    
+                      
+                    <div class="con9-con-tit-1  clearfix">
+                    
+                        <div class="lef"><span>项目阶段：</span></div>
+                        <div class="rig">
+                        
+                          <a class="active" href="/achievements.html?category_id=0&s_15=0">全部</a>
+                          
+                          <a href="/achievements.html?category_id=0&s_15=16">研发阶段</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_15=17">试生产阶段</a>
+                        
+                          <a href="/achievements.html?category_id=0&s_15=18">市场推广</a>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="h25"></div>
+            <div class="con9-list">
+                <ul class="clearfix">
+                <!--数据-->
+                <!--分页-->
+                
+                  <li  class="lefLi" >
+                      <a href="/achievements_show/1071.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">自由曲面渐变多焦点镜片个性化定制</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">市场推广</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">自由曲面渐变多焦点眼镜（Progressive Addit…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1070.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">一种宫腔粘连分离术后用镇痛给药器</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">宫腔粘连分离术后用镇痛给药器，包括外套管，…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1069.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">临床胰岛分离和移植相关试剂和耗材</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">市场推广</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">自主开发的该系列临床胰岛分离和移植相关的试…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li  class="lefLi" >
+                      <a href="/achievements_show/1068.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">微球支架骨修复材料产品研发项目</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">关键技术名称概念解释及技术原理简介：构建一…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1067.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">相变纳米颗粒热隐形条码项目</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">项目简述：该项目提供基于相变材料的热学条形…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1066.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">HM-1可降解止血微球</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">市场推广</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">1. 产品简介HM-1型可降解止血微球，属于医用…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li  class="lefLi" >
+                      <a href="/achievements_show/1065.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">准分子激光角膜屈光治疗机项目</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">市场推广</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">2015年4月20日获得国家食品药品监督管理局销…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1064.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">硬性角膜接触镜</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">市场推广</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">（一）关键技术1.新型RGP镜片的生产公司已经…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1063.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">高分辨免标记光学分子成像显微设备的开发</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">温州森佰生物科技有限公司需求1. 融资需求10…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li  class="lefLi" >
+                      <a href="/achievements_show/1062.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">基于外泌体的新一代癌症精准检测技术-试剂盒-芯片-设备开发与生产</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">全球市场对快速可靠的疾病诊断技术有着迫切的…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1061.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">牙齿干细胞银行的建立及用于个性化治疗的干细胞制剂的研发</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">温州优牙生物科技有限公司需求1.     A轮融资…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                  <li >
+                      <a href="/achievements_show/1060.html">
+                          <span class="lef">
+                              <span class="img"><img src="/upload/201809/04/201809041533574795.png" alt=""></span>
+                              <span class="p1">生物医药</span>
+                          </span>
+                          <span class="rig clearfix">
+                              <span class="p1">便携式基因检测系统</span>
+                              <span class="lef1">技术领域：</span>
+                              <span class="rig1">生物医药</span>
+                              <span class="lef1">项目阶段：</span>
+                              <span class="rig1">试生产阶段</span>
+                              <span class="lef1">项目介绍：</span>
+                              <span class="rig1">【核心技术】世界领先的首创SC-RCA恒温扩增专…</span>
+                          </span>
+                      </a>
+                  </li>
+                
+                </ul>
+            </div>
+            <div class="h50"></div>
+            <!--分页-->
+            <div class="con9-page">
+                <a>上一页</a><a class="active">1</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=2">2</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=3">3</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=4">4</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=5">5</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=6">6</a><span>...</span><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=8">8</a><a href="/achievements.html?category_id=0&min_price=0&max_price=0&orderby=&page=2">下一页</a>
+            </div>
+            <div class="h100"></div>
+        </div>
+  </div>
+
+  <!--底部-->
+    <div class="footer-wrap">
+        <div class="footer">
+            <div class="h40"></div>
+            <!--友情链接-->
+            <div class="f-link">
+                <p>友情链接：</p>
+                
+                  <a  class="lef" href="http://www.moe.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081653221166.png" alt=""></a>
+                
+                  <a  href="http://jyt.zj.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081653541282.png" alt=""></a>
+                
+                  <a  href="http://edu.wenzhou.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081654134825.png" alt=""></a>
+                
+                  <a  href="https://www.tech.net.cn/"target="_blank"><img src="/upload/201810/08/201810081654331882.png" alt=""></a>
+                
+                  <a  href="http://www.sik.cn/zjvtedu/main/"target="_blank"><img src="/upload/201810/08/201810081654509391.png" alt=""></a>
+                
+                  <a  href="http://wz.96871.com.cn/"target="_blank"><img src="/upload/201810/08/201810081655068697.png" alt=""></a>
+                
+            </div>
+            <div class="h36"></div>
+            <div class="f-nav clearfix">
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>成果库</span></a></li>
+                        <li><a href="/achievements.html">成果库</a></li>
+                        <li><a href="/chengguoLib.html">我要发布成果</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>需求库</span></a></li>
+                        <li><a href="/demand.html">需求库</a></li>
+                        <li><a href="/xuqiuLib.html">我要发布需求</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>专家库</span></a></li>
+                        <li><a href="/expert.html">专家库</a></li>
+                        <li><a href="/zhuanjiaLib.html">我要加入专家库</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>设备库</span></a></li>
+                        <li><a href="/equipment.html">设备库</a></li>
+                        <li><a href="/shebeiLib.html">我要加入设备</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>专利库</span></a></li>
+                        <li><a href="/patent.html">专利库</a></li>
+                        <li><a href="/zhuanliLib.html">我要发布专利</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>创业孵化</span></a></li>
+                        
+                            <li><a href="/company/53.html">孵化器众创空间</a></li>    
+                        
+                            <li><a href="/company/54.html">创新创业学院</a></li>    
+                        
+                            <li><a href="/company/55.html">创新创业团队</a></li>    
+                        
+                            <li><a href="/company/56.html">创新创业导师</a></li>    
+                        
+                            <li><a href="/company/57.html">创新创业活动</a></li>    
+                        
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-6">
+                    <ul class="ul1">
+                        <li><a href=""><span>联系我们</span></a></li>
+                        
+                          <li>联系地址：温州市教育局</li>
+                          <li>联系电话：0577-88636607</li>
+                          <li>客服QQ:123424994</li>
+                        
+                        <li>技术支持:<a href="http://www.yougoo.cn/" target="_blank">优谷科技</a></li>
+                    </ul>
+                    <div class="ul2" data-tag="share_1">
+                        <ul class="clearfix">
+                            <li><a class="bds_tsina" data-cmd="tsina"></a></li>
+                            <li><a class="bds_weixin" data-cmd="weixin"></a></li>
+                            <li><a class="bds_sqq" data-cmd="sqq"></a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+
+                    <!--<div class="ul2">
+                        <a href=""><img src="/templates/main/images/a34.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a35.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a36.png" alt=""></a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="footer1"><img src="/templates/main/images/a37.png" alt=""></div>
+    </div>
+</div>
+<div class="box-rig">
+    <ul class="clearfix">
+        <li class="li1" onclick="move(0,200)"><img src="/templates/main/images/a41.png" alt=""></li>
+        <li class="li1"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123424994&site=qq&menu=yes"><img src="/templates/main/images/a42.png" alt=""></a></li>
+        <li class="li1 liwx"><img src="/templates/main/images/a43.png" alt=""><!--<span style="background: #000;"></span>--></li>
+        <li class="li1 litel"><img src="/templates/main/images/a44.png" alt=""><span>0577-88636607</span></li>
+    </ul>
+</div>
+<!--返回顶部-->
+<script src="/templates/main/js/backTop.js"></script>
+<script>
+  $(function () {
+    $(".liwx img").hover(function () {
+      $(this).next().css({ display: "block" }).stop(true).animate({ left: -105 })
+    }, function () {
+      $(this).next().animate({ left: 0 }).css({ display: "none" })
+    })
+
+    $(".litel img").hover(function () {
+      $(this).next().css({ display: "block" }).stop(true).animate({ left: -124 })
+    }, function () {
+      $(this).next().animate({ left: 0 }).css({ display: "none" })
+    });
+
+  });
+</script>
+
+<!--banner脚本-->
+
+<script src="/templates/main/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    /*banner*/
+    $('.flexslider').flexslider({
+      animation: "fade",
+      slideshowSpeed: 4000,
+      animationSpeed: 400,
+      directionNav: true,
+      pauseOnAction: false
+    });
+    $('.flexslider2').flexslider({
+      animation: "fade",
+      slideshowSpeed: 4000,
+      animationSpeed: 400,
+      directionNav: true,
+      pauseOnAction: false
+    });
+
+  });
+</script>
+
+</body>
+</html>

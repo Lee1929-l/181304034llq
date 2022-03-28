@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>注册</title>
+  <link rel="stylesheet" href="/templates/main/css/base.css">
+  <link rel="stylesheet" href="/templates/main/css/index.css">
+  <link href="/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+  <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+  <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+  <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+  <link rel="stylesheet" href="/css/validate.css" />
+  <script type="text/javascript" charset="utf-8" src="/templates/main/js/register-validate.js"></script>
+
+</head>
+
+<body>
+<script type="text/javascript">
+  $(function () {
+    //初始化发表评论表单
+    // AjaxInitForm('#comment_form', '#btnSubmit', 0);
+  });
+</script>
+<div class="whole">
+<!--Header-->
+<script src="/templates/main/  "></script>
+<!--分享-->
+<script>
+  window._bd_share_config = {
+    common: {
+  },
+  share: [{
+    "tag": "share_1"
+  }]
+}
+with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+
+
+<script type="text/javascript">
+  $.ajax({
+    type: "POST",
+    url: "/tools/submit_ajax.ashx?action=user_check_login",
+    dataType: "json",
+    timeout: 20000,
+    success: function (data, textStatus) {
+      console.log(data);
+      if (data.status == 1) {
+        $(".h-rig-top").prepend("<span>" + data.username + '</span><a href="/index/exit.html">[退出登录]</a>');
+      } else {
+        $(".h-rig-top").prepend('<a href="/register.html">注册</a>');
+        $(".h-rig-top").prepend('<span></span>');
+        $(".h-rig-top").prepend('<a href="/login.html">登录</a>');
+      }
+    }
+  });
+</script>
+
+<div class="header-wrap">
+  <div class="header-top"></div>
+  <div class="header clearfix">
+    <!--logo-->
+    <div class="h-logo fl"><a href="/index.html"><img src="/templates/main/images/logo.png" alt=""></a></div>
+
+    <div class="h-rig fr">
+      <!--右边头部-->
+      <div class="h-rig-top fr">
+        <!--<a href="">注册</a>
+        <span></span>
+        <a href="">登录</a>-->
+      </div>
+      <div class="clear"></div>
+      <!--右边导航-->
+      <div class="h-rig-nav fr">
+        <a class="active1" href="/index.html">网站首页</a>
+        <span></span>
+        <a class="active2" href="/achievements.html">成果库</a>
+        <span></span>
+        <a class="active3" href="/demand.html">需求库</a>
+        <span></span>
+        <a class="active4" href="/expert.html">专家库</a>
+        <span></span>
+        <a class="active5" href="/equipment.html">设备库</a>
+        <span></span>
+        <a class="active6" href="/patent.html">专利库</a>
+        <span></span>
+        <a class="active7" href="/company.html">创业孵化</a>
+        <span></span>
+        <a class="active8" href="/news.html">科技资讯</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+<form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=user_register&site=main">
+<div class="con-wrap">
+    <div class="con15-wrap">
+        <div class="con15 pt-146">
+            <div class="con15-con">
+                <div class="con15-con-tit clearfix">
+                    <a href="javascript:void(0)" class="lef active">专家个人</a>
+                    <a href="/register2.html" class="rig">企业单位</a>
+                </div>
+                <div class="h18"></div>
+                <div class="con15-con-con">
+                    <ul>
+                        <li class="li1 clearfix">
+                            <div class="img">
+                              <i><img src="/templates/main/images/d22.png" alt=""></i></div>
+                            <div class="rig rig1">
+                                <input class="input1" type="text" id="txtMobile" name="txtMobile" placeholder="手机号码" datatype="m" sucmsg=" ">
+                            </div>
+                        </li>
+                        <li class="li1 clearfix">
+                            <div class="img"><i><img src="/templates/main/images/d22.png" alt=""></i></div>
+                            <div class="rig rig2">
+                                <input id="txtCode" name="txtCode" type="text" class="input" type="text" datatype="*" sucmsg=" " placeholder="验证码">
+                                <!--<a onclick="sendSMS(this, '#txtMobile', '/tools/submit_ajax.ashx?action=user_verify_smscode&site=main')" id="fasong_span" >发送验证码</a>-->
+
+                                <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="140" height="43" align="absmiddle" /></a>
+
+                            </div>
+                        </li>
+                        <li class="li1 clearfix">
+                            <div class="img"><i><img src="/templates/main/images/d23.png" alt=""></i></div>
+                            <div class="rig rig1">
+                                <input id="txtPassword" name="txtPassword" class="input1" type="password" placeholder="密码"" errormsg="密码范围在6-20位之间" sucmsg=" ">
+                            </div>
+                        </li>
+                        <li class="li1 clearfix">
+                            <div class="img"><i><img src="/templates/main/images/d23.png" alt=""></i></div>
+                            <div class="rig rig1">
+                                <input id="txtPassword1" name="txtPassword1" class="input1" type="password" placeholder="确认密码" recheck="txtPassword" nullmsg="请再输入一次密码" errormsg="两次输入的密码不一致" sucmsg=" ">
+                            </div>
+                        </li>
+
+                        <li class="li1 clearfix">
+                            <div class="img"><i><img src="/templates/main/images/d24.png" alt=""></i></div>
+                            <div class="rig rig1">
+                                <input id="txtUsername" name="txtUsername" class="input1" type="text" datatype="*" placeholder="姓名">
+                            </div>
+                        </li>
+
+                        <li class="li1 clearfix">
+                            <div class="img"><i><img src="/templates/main/images/d25.png" alt=""></i></div>
+                            <div class="rig rig1">
+                                <input id="txtEmail" name="txtEmail" class="input1" type="text" datatype="e" placeholder="E-MAIL">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="con15-con-con-sub">
+                        <input type="submit" value="注     册">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<!--Footer-->
+<!--底部-->
+    <div class="footer-wrap">
+        <div class="footer">
+            <div class="h40"></div>
+            <!--友情链接-->
+            <div class="f-link">
+                <p>友情链接：</p>
+                
+                  <a  class="lef" href="http://www.moe.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081653221166.png" alt=""></a>
+                
+                  <a  href="http://jyt.zj.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081653541282.png" alt=""></a>
+                
+                  <a  href="http://edu.wenzhou.gov.cn/"target="_blank"><img src="/upload/201810/08/201810081654134825.png" alt=""></a>
+                
+                  <a  href="https://www.tech.net.cn/"target="_blank"><img src="/upload/201810/08/201810081654331882.png" alt=""></a>
+                
+                  <a  href="http://www.sik.cn/zjvtedu/main/"target="_blank"><img src="/upload/201810/08/201810081654509391.png" alt=""></a>
+                
+                  <a  href="http://wz.96871.com.cn/"target="_blank"><img src="/upload/201810/08/201810081655068697.png" alt=""></a>
+                
+            </div>
+            <div class="h36"></div>
+            <div class="f-nav clearfix">
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>成果库</span></a></li>
+                        <li><a href="/achievements.html">成果库</a></li>
+                        <li><a href="/chengguoLib.html">我要发布成果</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>需求库</span></a></li>
+                        <li><a href="/demand.html">需求库</a></li>
+                        <li><a href="/xuqiuLib.html">我要发布需求</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>专家库</span></a></li>
+                        <li><a href="/expert.html">专家库</a></li>
+                        <li><a href="/zhuanjiaLib.html">我要加入专家库</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>设备库</span></a></li>
+                        <li><a href="/equipment.html">设备库</a></li>
+                        <li><a href="/shebeiLib.html">我要加入设备</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>专利库</span></a></li>
+                        <li><a href="/patent.html">专利库</a></li>
+                        <li><a href="/zhuanliLib.html">我要发布专利</a></li>
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-1">
+                    <ul class="ul1">
+                        <li><a href="javascript:void(0)"><span>创业孵化</span></a></li>
+                        
+                            <li><a href="/company/53.html">孵化器众创空间</a></li>    
+                        
+                            <li><a href="/company/54.html">创新创业学院</a></li>    
+                        
+                            <li><a href="/company/55.html">创新创业团队</a></li>    
+                        
+                            <li><a href="/company/56.html">创新创业导师</a></li>    
+                        
+                            <li><a href="/company/57.html">创新创业活动</a></li>    
+                        
+                    </ul>
+                </div>
+                <div class="f-nav-ul f-nav-6">
+                    <ul class="ul1">
+                        <li><a href=""><span>联系我们</span></a></li>
+                        
+                          <li>联系地址：温州市教育局</li>
+                          <li>联系电话：0577-88636607</li>
+                          <li>客服QQ:123424994</li>
+                        
+                        <li>技术支持:<a href="http://www.yougoo.cn/" target="_blank">优谷科技</a></li>
+                    </ul>
+                    <div class="ul2" data-tag="share_1">
+                        <ul class="clearfix">
+                            <li><a class="bds_tsina" data-cmd="tsina"></a></li>
+                            <li><a class="bds_weixin" data-cmd="weixin"></a></li>
+                            <li><a class="bds_sqq" data-cmd="sqq"></a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+
+                    <!--<div class="ul2">
+                        <a href=""><img src="/templates/main/images/a34.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a35.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a36.png" alt=""></a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="footer1"><img src="/templates/main/images/a37.png" alt=""></div>
+    </div>
+<!--/Footer-->
+</div>
+<div class="box-rig">
+    <ul class="clearfix">
+        <li class="li1" onclick="move(0,200)"><img src="/templates/main/images/a41.png" alt=""></li>
+        <li class="li1"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123424994&site=qq&menu=yes"><img src="/templates/main/images/a42.png" alt=""></a></li>
+        <li class="li1 liwx"><img src="/templates/main/images/a43.png" alt=""><!--<span style="background: #000;"></span>--></li>
+        <li class="li1 litel"><img src="/templates/main/images/a44.png" alt=""><span>0577-88636607</span></li>
+    </ul>
+</div>
+<!--返回顶部-->
+<script src="/templates/main/js/backTop.js"></script>
+<script>
+  $(function () {
+    $(".liwx img").hover(function () {
+      $(this).next().css({ display: "block" }).stop(true).animate({ left: -105 })
+    }, function () {
+      $(this).next().animate({ left: 0 }).css({ display: "none" })
+    })
+
+    $(".litel img").hover(function () {
+      $(this).next().css({ display: "block" }).stop(true).animate({ left: -124 })
+    }, function () {
+      $(this).next().animate({ left: 0 }).css({ display: "none" })
+    });
+
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>温州产教融合校企对接平台</title>
+
+		<link rel="stylesheet" href="/templates/main/css/base.css" />
+		<link rel="stylesheet" href="/templates/main/css/index.css" />
+		<script src="/templates/main/js/jquery-1.7.2.min.js"></script>
+		<style>
+			/*.h-rig-nav a.active1{border-bottom-color: #e97212;}*/
+		</style>
+		<script type="text/javascript">
+			$(function () {
+				/*banner*/
+				$(".flexslider").flexslider({
+					animation: "fade",
+					slideshowSpeed: 4000,
+					animationSpeed: 400,
+					directionNav: true,
+					pauseOnAction: false,
+				});
+				$(".flexslider2").flexslider({
+					animation: "fade",
+					slideshowSpeed: 4000,
+					animationSpeed: 400,
+					directionNav: true,
+					pauseOnAction: false,
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="whole">
+			<script src="/templates/main/  "></script>
+        <!--分享-->
+        <script>
+          window._bd_share_config = {
+            common: {},
+            share: [
+              {
+                tag: "share_1",
+              },
+            ],
+          };
+          with (document)
+            (0)[
+              ((getElementsByTagName("head")[0] || body).appendChild(
+                createElement("script")
+              ).src =
+                "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" +
+                ~(-new Date() / 36e5))
+            ];
+        </script>
+
+        <script type="text/javascript">
+          $.ajax({
+            type: "POST",
+            url: "/tools/submit_ajax.ashx?action=user_check_login",
+            dataType: "json",
+            timeout: 20000,
+            success: function (data, textStatus) {
+              console.log(data);
+              if (data.status == 1) {
+                $(".h-rig-top").prepend(
+                  "<span>" +
+                    data.username +
+                    '</span><a href="/index/exit.html">[退出登录]</a>'
+                );
+              } else {
+                $(".h-rig-top").prepend('<a href="/register.html">注册</a>');
+                $(".h-rig-top").prepend("<span></span>");
+                $(".h-rig-top").prepend('<a href="/login.html">登录</a>');
+              }
+            },
+          });
+        </script>
+
+			<div class="header-wrap">
+				<div class="header-top"></div>
+				<div class="header clearfix">
+					<!--logo-->
+					<div class="h-logo fl">
+						<a href="/index.html"
+							><img src="/templates/main/images/logo.png" alt=""
+						/></a>
+					</div>
+
+					<div class="h-rig fr">
+						<!--右边头部-->
+						<div class="h-rig-top fr">
+							<!--<a href="">注册</a>
+        <span></span>
+        <a href="">登录</a>-->
+						</div>
+						<div class="clear"></div>
+						<!--右边导航-->
+						<div class="h-rig-nav fr">
+							<a class="active1" href="/index.html">网站首页</a>
+							<span></span>
+							<a class="active2" href="/achievements.html">成果库</a>
+							<span></span>
+							<a class="active3" href="/demand.html">需求库</a>
+							<span></span>
+							<a class="active4" href="/expert.html">专家库</a>
+							<span></span>
+							<a class="active5" href="/equipment.html">设备库</a>
+							<span></span>
+							<a class="active6" href="/patent.html">专利库</a>
+							<span></span>
+							<a class="active7" href="/company.html">创业孵化</a>
+							<span></span>
+							<a class="active8" href="/news.html">科技资讯</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--banner-->
+			<div class="banner">
+				<div class="flexslider">
+					<ul class="slides">
+						<li
+							style="
+								background: url('/templates/main/images/banner.png') 50% 0
+									no-repeat;
+							"
+						></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					function trySet(obj, txt) {
+						if (obj.value == "") {
+							obj.value = txt;
+						}
+					}
+					function tryClear(obj, txt) {
+						if (obj.value == txt) {
+							obj.value = "";
+						}
+					}
+					function Check(key) {
+						if (key == "" || key == "关键字搜索") {
+							alert("您还未关键字搜索");
+							return false;
+						} else {
+							return true;
+						}
+					}
+					function SiteSearchs(send_url, divTgs) {
+						var str = $.trim($(divTgs).val());
+						if (str.length > 0 && str != "输入关健字") {
+							window.location.href =
+								send_url + "?keyword=" + encodeURI($(divTgs).val());
+						}
+						return false;
+					}
+
+					function SiteSearchs2(send_url, d1, d2, d3) {
+						var str1 = $.trim($(d1).val());
+						var str2 = $.trim($(d2).val());
+						var str3 = $.trim($(d3).val());
+						var link1 = "";
+						if (str3.length > 0) {
+							link1 += "keyword3=" + encodeURI(str3);
+
+							if (str1.length > 0) {
+								link1 += "&keyword1=" + encodeURI(str1);
+							} else {
+								return false;
+							}
+							if (str2.length > 0) {
+								link1 += "&keyword2=" + encodeURI(str2);
+							}
+
+							window.location.href = send_url + "?" + link1;
+						}
+						return false;
+					}
+				</script>
+        <!-- 搜索框 -->
+				<div class="ban-nav-wrap">
+					<div class="ban-nav clearfix">
+						<div class="p1">资源查找</div>
+						<div class="p2">
+							<p class="clearfix"><span>按分类查找</span><i></i></p>
+							<ul class="ul1">
+								<li><span class="成果库">成果库</span></li>
+								<li><span class="需求库">需求库</span></li>
+								<li><span class="专家库">专家库</span></li>
+								<li><span class="设备库">设备库</span></li>
+								<li><span class="专利库">专利库</span></li>
+							</ul>
+						</div>
+						<div class="p3">
+							<input type="text" id="key1" />
+						</div>
+
+						<div class="p2">
+							<p class="clearfix"><span>按领域查找</span><i></i></p>
+							<ul class="ul1">
+								<li><span class="23">现代农业</span></li>
+								<li><span class="24">材料工程</span></li>
+								<li><span class="25">机械装备</span></li>
+								<li><span class="26">信息技术</span></li>
+								<li><span class="27">食品营养</span></li>
+								<li><span class="28">服装纺织</span></li>
+								<li><span class="29">能源环保</span></li>
+								<li><span class="30">电子电气</span></li>
+								<li><span class="31">化学工程</span></li>
+								<li><span class="32">绿色建筑</span></li>
+								<li><span class="33">生物医药</span></li>
+								<li><span class="34">海洋资源</span></li>
+								<li><span class="35">其他</span></li>
+							</ul>
+						</div>
+						<div class="p3">
+							<input type="text" id="key2" />
+						</div>
+
+						<div class="p4">
+							<p><span>关键字：</span></p>
+						</div>
+						<div class="p5">
+							<input type="text" id="key3" />
+						</div>
+						<div
+							class="p6"
+							onclick="SiteSearchs2('/krp/search.html', '#key1', '#key2', '#key3');"
+						>
+							<a href="javascript:void(0)"
+								><img src="/templates/main/images/a02.png" alt="" /><span
+									>查找</span
+								></a
+							>
+						</div>
+					</div>
+				</div>
+				<!--
+<div class="header-nav-right">
+  <input id="keywords" type="text" class="text" placeholder="请输入关键字搜索" onkeydown="if(event.keyCode==13)SiteSearchs('/krp/search.html', '#keywords');">
+  <span class="button" onclick="SiteSearchs('/krp/search.html', '#keywords');"></span>
+</div>-->
+				<script type="text/javascript">
+					$(function () {
+						/*资源查找*/
+						if ($(".ban-nav .p2")) {
+							$(".ban-nav .p2").hover(
+								function () {},
+								function () {
+									$(this).find("ul").slideUp().removeClass("active");
+								}
+							);
+							$(".ban-nav .p2 > p").click(function () {
+								if ($(this).next("ul").hasClass("active")) {
+									$(this).next("ul").slideUp().removeClass("active");
+								} else {
+									$(this).next("ul").slideDown().addClass("active");
+								}
+							});
+							$(".ban-nav .p2 ul li").click(function () {
+								$(this)
+									.parent()
+									.prev("p")
+									.find("span")
+									.html($(this).find("span").html());
+								$(this).parent().parent().next().find("input")[0].value =
+									$(this).find("span")[0].className;
+							});
+						}
+					});
+				</script>
+			</div>
+      
+			<!--内容-->
+			<div class="con-wrap">
+				<div class="h50"></div>
+				<!--新闻-->
+				<div class="con1 clearfix">
+					<!--轮播图-->
+					<div class="con1-lef">
+						<div class="flexslider2">
+							<ul class="slides">
+								<li
+									style="
+										background: url('/upload/202107/09/202107091245299443.jpg')
+											50% 0 / cover no-repeat;
+									"
+								></li>
+
+								<li
+									style="
+										background: url('/upload/202107/09/202107091429121404.jpg')
+											50% 0 / cover no-repeat;
+									"
+								></li>
+
+								<li
+									style="
+										background: url('/upload/202107/10/202107101426451142.jpg')
+											50% 0 / cover no-repeat;
+									"
+								></li>
+							</ul>
+						</div>
+					</div>
+					<!--新闻-->
+					<div class="con1-rig">
+						<div class="con1-rig-top">
+							<a class="con1-rig-top-a" href="/news.html">更多</a>
+							<p>
+								<a class="active" href="/news/62.html">新闻资讯</a>
+								<i></i>
+
+								<a href="/news/63.html">通知公告</a>
+								<i></i>
+
+								<a href="/news/64.html">政策法规</a>
+								<i></i>
+							</p>
+						</div>
+						<div class="con1-rig-con">
+							<ul style="display: block">
+								<li>
+									<a href="/news_show/62/1487.html">
+										<span>温州首家人工智能产业学院揭牌</span><i>2021-07-07</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1486.html">
+										<span
+											>温州科技职业学院成功举办首届“活力温台”高职院校教学能力比…</span
+										><i>2021-07-03</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1491.html">
+										<span
+											>浙南先进装备制造业产教融合省级示范基地揭牌仪式在浙江东方职…</span
+										><i>2021-06-29</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1495.html">
+										<span
+											>浙江安防职业技术学院与新华三集团共建的混合所有制二级学院—…</span
+										><i>2021-06-24</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1485.html">
+										<span
+											>浙江工贸职业技术学院与多家行业龙头企业联合发起成立成立眼镜…</span
+										><i>2021-06-22</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1484.html">
+										<span
+											>“全国高等职业院校技术应用服务联盟”入选第二批国家级示范性…</span
+										><i>2021-06-05</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1488.html">
+										<span
+											>温州科技职业学院获批国家首批教师实践流动站试点建设单位</span
+										><i>2021-05-17</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1492.html">
+										<span
+											>温州市东方职业培训学校获批国家残联第四批国家级残疾人职业技…</span
+										><i>2021-05-12</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1493.html">
+										<span
+											>温州市退役军人事务局、浙江东方职业技术学院联合举行退役军人…</span
+										><i>2021-05-07</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1483.html">
+										<span>“温州职业技术学院永嘉学院” 签约揭牌</span
+										><i>2021-01-20</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1494.html">
+										<span
+											>浙江东方职业技术学院与温州经济技术开发区携手打造“城市管理…</span
+										><i>2021-01-16</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1490.html">
+										<span>两校一企三方共商物联网专业发展之计</span
+										><i>2020-09-15</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1477.html">
+										<span
+											>浙江安防职业技术学院和多家单位研发“疫期出入管理系统”助力…</span
+										><i>2020-03-04</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1472.html">
+										<span
+											>【浙江工人日报】两年签下220项产教融合和科技成果转化项目—…</span
+										><i>2019-12-05</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1476.html">
+										<span
+											>【温州日报】产教融合造就“三赢”局面——2019
+											年第二期产教…</span
+										><i>2019-11-30</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1475.html">
+										<span
+											>【浙江新闻】产教融合！在温高校科技成果转化结硕果
+											49个项目…</span
+										><i>2019-11-30</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1471.html">
+										<span
+											>深化产教融合
+											推进校企协同——2019年第二期温州高校和中职学…</span
+										><i>2019-11-30</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1474.html">
+										<span
+											>【温州都市报】省级现代学徒制试点第一批单位昨天授牌</span
+										><i>2019-11-29</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1473.html">
+										<span
+											>【温州晚报】49个产教融合和科技成果转化项目集中签约</span
+										><i>2019-11-29</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1465.html">
+										<span
+											>共建产教融合平台
+											推动科技成果转化——温州高校66个校企合作…</span
+										><i>2019-05-30</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1130.html">
+										<span>浙南产业集聚区：深化产教融合 精准服务企业</span
+										><i>2019-03-20</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1128.html">
+										<span>在温高校与企业签订协议 38个产教融合项目落地</span
+										><i>2018-12-01</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/1039.html">
+										<span
+											>温州医科大学为科技成果找“婆家” 一项成果拍出600万元</span
+										><i>2018-11-15</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/299.html">
+										<span
+											>温州医科大学与乐清市政府签署合作协议，推进产教融合和科技成…</span
+										><i>2018-07-25</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/313.html">
+										<span>投入2000多万！产教融合“温大实践”再添新模式</span
+										><i>2018-07-01</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/320.html">
+										<span
+											>温州大学在产教融合发展战略国际论坛上分享“温大经验”</span
+										><i>2018-05-21</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/300.html">
+										<span
+											>温州职业技术学院瑞安学院与瑞安经济开发区管委会签署智能制造…</span
+										><i>2018-05-21</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/318.html">
+										<span>浙南产教协同发展创新中心成立 “金海匠谷”揭开面纱</span
+										><i>2018-05-09</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/298.html">
+										<span
+											>50个产教融合项目签约落地，企业高校架桥“联姻”助力温州发展…</span
+										><i>2018-04-26</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/62/319.html">
+										<span
+											>市铁投集团与温州职业技术学院全面实施产教融合战略合作签约仪…</span
+										><i>2017-12-25</i>
+									</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li>
+									<a href="/news_show/63/1469.html">
+										<span
+											>关于公布温州高校首批产教融合示范基地立项建设名单的通知</span
+										><i>2018-12-18</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/63/1467.html">
+										<span
+											>关于开展温州高校产教融合示范基地申报建设工作的通知</span
+										><i>2018-11-13</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/63/296.html">
+										<span>关于征集我省产教融合典型案例的通知</span
+										><i>2018-08-13</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/63/1470.html">
+										<span>关于公布首批“温州高校协同创新中心”认定结果的通知</span
+										><i>2017-12-05</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/63/1468.html">
+										<span
+											>关于开展首批“温州高校协同创新中心”申报认定工作的通知</span
+										><i>2017-11-03</i>
+									</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li>
+									<a href="/news_show/64/1131.html">
+										<span
+											>浙江省人民政府关于推动创新创业高质量发展打造“双创”升级版…</span
+										><i>2019-04-02</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/1129.html">
+										<span>国务院关于印发国家职业教育改革实施方案的通知</span
+										><i>2019-02-15</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/297.html">
+										<span>关于做好全市新时期就业创业工作的实施意见</span
+										><i>2018-10-17</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/312.html">
+										<span>关于高水平建设人才生态最优市的 40条意见</span
+										><i>2018-09-28</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/1466.html">
+										<span>国务院办公厅关于深化产教融合的若干意见</span
+										><i>2018-01-05</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/314.html">
+										<span>浙江省促进科技成果转化条例</span><i>2017-07-11</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/308.html">
+										<span
+											>关于印发浙江省省级科技成果转化引导基金管理办法的通知</span
+										><i>2017-02-10</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/305.html">
+										<span>中华人民共和国专利法实施细则</span><i>2017-01-16</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/306.html">
+										<span>国务院关于促进创业投资持续健康发展的若干意见</span
+										><i>2016-12-08</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/303.html">
+										<span
+											>温州市市属高等院校科研院所科技成果使用处置和收益权改革实施…</span
+										><i>2016-11-26</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/316.html">
+										<span
+											>国务院办公厅关于加快众创空间发展服务实体经济转型升级的指导…</span
+										><i>2016-10-09</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/304.html">
+										<span
+											>关于印发温州市科技创新创业投资基金管理办法（试行）的通知</span
+										><i>2016-10-09</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/311.html">
+										<span>浙江省人民政府关于支持大众创业促进就业的意见</span
+										><i>2016-08-05</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/302.html">
+										<span
+											>温州市人民政府办公室关于发展众创空间推进大众创新创业的实施…</span
+										><i>2016-01-09</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/309.html">
+										<span
+											>浙江省人民政府关于大力推进大众创业万众创新的实施意见</span
+										><i>2015-12-30</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/310.html">
+										<span
+											>浙江省人民政府办公厅《关于加快发展众创空间促进创业创新的实…</span
+										><i>2015-11-15</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/315.html">
+										<span>国务院关于进一步做好新形势下就业创业工作的意见</span
+										><i>2015-10-24</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/317.html">
+										<span
+											>国务院关于大力推进大众创业万众创新若干政策措施的意见</span
+										><i>2015-07-07</i>
+									</a>
+								</li>
+
+								<li>
+									<a href="/news_show/64/307.html">
+										<span
+											>国务院办公厅关于发展众创空间推进大众创新创业的指导意见</span
+										><i>2015-05-02</i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--专家库-->
+				<div class="con2">
+					<ul class="clearfix">
+						<li class="lef">
+							<div class="img">
+								<img src="/templates/main/images/a04.png" alt="" />
+							</div>
+							<a class="a1" href="/achievements.html">成果库</a>
+							<a class="a2" href="/chengguoLib.html">发布</a>
+						</li>
+
+						<li>
+							<div class="img">
+								<img src="/templates/main/images/a05.png" alt="" />
+							</div>
+							<a class="a1" href="/demand.html">需求库</a>
+							<a class="a2" href="/xuqiuLib.html">发布</a>
+						</li>
+						<li>
+							<div class="img">
+								<img src="/templates/main/images/a06.png" alt="" />
+							</div>
+							<a class="a1" href="/expert.html">专家库</a>
+							<a class="a2" href="/zhuanjiaLib.html">发布</a>
+						</li>
+						<li>
+							<div class="img">
+								<img src="/templates/main/images/a07.png" alt="" />
+							</div>
+							<a class="a1" href="/equipment.html">设备库</a>
+							<a class="a2" href="/shebeiLib.html">发布</a>
+						</li>
+						<li>
+							<div class="img">
+								<img src="/templates/main/images/a08.png" alt="" />
+							</div>
+							<a class="a1" href="/patent.html">专利库</a>
+							<a class="a2" href="/zhuanliLib.html">发布</a>
+						</li>
+					</ul>
+				</div>
+				<!--创新-->
+				<div class="con3">
+					<ul class="clearfix">
+						<li class="lef">
+							<img src="/upload/201809/17/201809171721195380.png" alt="" />
+							<a href="/company/53.html">孵化器众创空间</a>
+						</li>
+
+						<li>
+							<img src="/upload/201809/17/201809171721287456.png" alt="" />
+							<a href="/company/54.html">创新创业学院</a>
+						</li>
+
+						<li>
+							<img src="/upload/201809/17/201809171721371301.png" alt="" />
+							<a href="/company/55.html">创新创业团队</a>
+						</li>
+
+						<li>
+							<img src="/upload/201809/17/201809171721455615.png" alt="" />
+							<a href="/company/56.html">创新创业导师</a>
+						</li>
+
+						<li>
+							<img src="/upload/201809/17/201809171721543130.png" alt="" />
+							<a href="/company/57.html">创新创业活动</a>
+						</li>
+					</ul>
+				</div>
+				<!--温州高校-->
+				<div class="con4">
+					<div class="h75"></div>
+
+					<p>温州高校</p>
+					<div class="h30"></div>
+					<span>不当科技成果的享受者，要当科技探索的实践者</span>
+
+					<div class="h48"></div>
+					<i></i>
+					<div class="h32"></div>
+				</div>
+				<div class="con5-btn">
+					<span><img src="/templates/main/images/a38.png" alt="" /></span>
+					<span><img src="/templates/main/images/a39.png" alt="" /></span>
+				</div>
+				<div class="h10"></div>
+				<div class="con5">
+					<ul class="clearfix">
+						<li>
+							<a target="_blank" href="http://www.wmu.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261720436572.jpg"
+										alt="" /></span
+								><i>温州医科大学</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wzu.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261720257239.jpg"
+										alt="" /></span
+								><i>温州大学</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wku.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261720018197.jpg"
+										alt="" /></span
+								><i>温州肯恩大学</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wzbc.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261719429781.jpg"
+										alt="" /></span
+								><i>温州商学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://rjxy.wmu.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261719256982.jpg"
+										alt="" /></span
+								><i>温州医科大学仁济学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.ojc.zj.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261719073772.jpg"
+										alt="" /></span
+								><i>温州大学瓯江学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wzvtc.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261718414963.jpg"
+										alt="" /></span
+								><i>温州职业技术学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.zjitc.net/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261718268825.jpg"
+										alt="" /></span
+								><i>浙江工贸职业技术学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wzvcst.edu.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261717534320.jpg"
+										alt="" /></span
+								><i>温州科技职业学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.zjdfc.com/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261717293304.jpg"
+										alt="" /></span
+								><i>浙江东方职业技术学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.zjist.cn/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261717116344.jpg"
+										alt="" /></span
+								><i>浙江安防职业技术学院</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.wztvu.com/"
+								><span class="img"
+									><img
+										src="/upload/201809/26/201809261716520731.jpg"
+										alt="" /></span
+								><i>温州城市大学</i></a
+							>
+						</li>
+					</ul>
+				</div>
+
+				<!--企业展示-->
+				<div class="con4">
+					<div class="h75"></div>
+
+					<p>企业展示</p>
+					<div class="h30"></div>
+					<span>崇尚科学，探索创新，挑战新科技</span>
+
+					<div class="h48"></div>
+					<i></i>
+					<div class="h34"></div>
+				</div>
+				<div class="con6-btn">
+					<span><img src="/templates/main/images/a38.png" alt="" /></span>
+					<span><img src="/templates/main/images/a39.png" alt="" /></span>
+				</div>
+				<div class="h10"></div>
+				<div class="con6">
+					<ul class="clearfix">
+						<li>
+							<a target="_blank" href="http://www.semirbiz.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081705156374.jpg"
+										alt="" /></span
+								><i>森马服饰股份有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.chint.com/zh/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081704595886.jpg"
+										alt="" /></span
+								><i>正泰集团股份有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.huafeng.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081704453424.jpg"
+										alt="" /></span
+								><i>华峰集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.delixi.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081704283689.jpg"
+										alt="" /></span
+								><i>德力西集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.kaiyuangroup.cc/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081704130105.jpg"
+										alt="" /></span
+								><i>温州开元集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.aokang.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081703536289.jpg"
+										alt="" /></span
+								><i>奥康集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.sorl.com.cn/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081703323949.jpg"
+										alt="" /></span
+								><i>瑞立集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.kangnai.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081703115994.jpg"
+										alt="" /></span
+								><i>康奈集团有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.chinavalve.net/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081702506984.jpg"
+										alt="" /></span
+								><i>江南阀门有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.sxjd-cn.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081702264226.jpg"
+										alt="" /></span
+								><i>浙江三星机电股份有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.giuseppe.cn/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081701597290.jpg"
+										alt="" /></span
+								><i>浙江乔治白服饰股份有限公司</i></a
+							>
+						</li>
+
+						<li>
+							<a target="_blank" href="http://www.zjtr.com/"
+								><span class="img"
+									><img
+										src="/upload/201810/08/201810081701378261.jpg"
+										alt="" /></span
+								><i>浙江天瑞药业有限公司</i></a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="h60"></div>
+				<div class="con7-wrap">
+					<div class="h75"></div>
+					<div class="con7">
+						<p>合作案例</p>
+						<div class="h30"></div>
+						<i></i>
+						<div class="h46"></div>
+					</div>
+					<div class="con8">
+						<ul class="clearfix">
+							<li class="lef">
+								<a href="/anli_show/725.html"
+									><span class="img"
+										><img
+											src="/upload/201811/15/201811150914136271.png"
+											alt="" /></span
+									><i>洞头县状元南片垦区涂面整理工程堤内围垦</i></a
+								>
+							</li>
+
+							<li>
+								<a href="/anli_show/724.html"
+									><span class="img"
+										><img
+											src="/upload/201811/15/201811150910007336.png"
+											alt="" /></span
+									><i>瓯飞水闸滩涂淤泥深层处理工程</i></a
+								>
+							</li>
+
+							<li>
+								<a href="/anli_show/706.html"
+									><span class="img"
+										><img
+											src="/upload/201811/14/201811141601106776.png"
+											alt="" /></span
+									><i>高性能聚酯、共聚酰胺等高分子材料</i></a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="h60"></div>
+					<div class="con8-a"><a href="/anli.html">更多案例</a></div>
+					<div class="h60"></div>
+				</div>
+			</div>
+
+			<!--底部-->
+			<div class="footer-wrap">
+				<div class="footer">
+					<div class="h40"></div>
+					<!--友情链接-->
+					<div class="f-link">
+						<p>友情链接：</p>
+
+						<a class="lef" href="http://www.moe.gov.cn/" target="_blank"
+							><img src="/upload/201810/08/201810081653221166.png" alt=""
+						/></a>
+
+						<a href="http://jyt.zj.gov.cn/" target="_blank"
+							><img src="/upload/201810/08/201810081653541282.png" alt=""
+						/></a>
+
+						<a href="http://edu.wenzhou.gov.cn/" target="_blank"
+							><img src="/upload/201810/08/201810081654134825.png" alt=""
+						/></a>
+
+						<a href="https://www.tech.net.cn/" target="_blank"
+							><img src="/upload/201810/08/201810081654331882.png" alt=""
+						/></a>
+
+						<a href="http://www.sik.cn/zjvtedu/main/" target="_blank"
+							><img src="/upload/201810/08/201810081654509391.png" alt=""
+						/></a>
+
+						<a href="http://wz.96871.com.cn/" target="_blank"
+							><img src="/upload/201810/08/201810081655068697.png" alt=""
+						/></a>
+					</div>
+					<div class="h36"></div>
+					<div class="f-nav clearfix">
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>成果库</span></a>
+								</li>
+								<li><a href="/achievements.html">成果库</a></li>
+								<li><a href="/chengguoLib.html">我要发布成果</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>需求库</span></a>
+								</li>
+								<li><a href="/demand.html">需求库</a></li>
+								<li><a href="/xuqiuLib.html">我要发布需求</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>专家库</span></a>
+								</li>
+								<li><a href="/expert.html">专家库</a></li>
+								<li><a href="/zhuanjiaLib.html">我要加入专家库</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>设备库</span></a>
+								</li>
+								<li><a href="/equipment.html">设备库</a></li>
+								<li><a href="/shebeiLib.html">我要加入设备</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>专利库</span></a>
+								</li>
+								<li><a href="/patent.html">专利库</a></li>
+								<li><a href="/zhuanliLib.html">我要发布专利</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-1">
+							<ul class="ul1">
+								<li>
+									<a href="javascript:void(0)"><span>创业孵化</span></a>
+								</li>
+
+								<li><a href="/company/53.html">孵化器众创空间</a></li>
+
+								<li><a href="/company/54.html">创新创业学院</a></li>
+
+								<li><a href="/company/55.html">创新创业团队</a></li>
+
+								<li><a href="/company/56.html">创新创业导师</a></li>
+
+								<li><a href="/company/57.html">创新创业活动</a></li>
+							</ul>
+						</div>
+						<div class="f-nav-ul f-nav-6">
+							<ul class="ul1">
+								<li>
+									<a href=""><span>联系我们</span></a>
+								</li>
+
+								<li>联系地址：温州市教育局</li>
+								<li>联系电话：0577-88636607</li>
+								<li>客服QQ:123424994</li>
+
+								<li>
+									技术支持:<a href="http://www.yougoo.cn/" target="_blank"
+										>优谷科技</a
+									>
+								</li>
+							</ul>
+							<div class="ul2" data-tag="share_1">
+								<ul class="clearfix">
+									<li><a class="bds_tsina" data-cmd="tsina"></a></li>
+									<li><a class="bds_weixin" data-cmd="weixin"></a></li>
+									<li><a class="bds_sqq" data-cmd="sqq"></a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+
+							<!--<div class="ul2">
+                        <a href=""><img src="/templates/main/images/a34.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a35.png" alt=""></a>
+                        <a href=""><img src="/templates/main/images/a36.png" alt=""></a>
+                    </div>-->
+						</div>
+					</div>
+				</div>
+				<div class="footer1">
+					<img src="/templates/main/images/a37.png" alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="box-rig">
+			<ul class="clearfix">
+				<li class="li1" onclick="move(0,200)">
+					<img src="/templates/main/images/a41.png" alt="" />
+				</li>
+				<li class="li1">
+					<a
+						target="_blank"
+						href="http://wpa.qq.com/msgrd?v=3&uin=123424994&site=qq&menu=yes"
+						><img src="/templates/main/images/a42.png" alt=""
+					/></a>
+				</li>
+				<li class="li1 liwx">
+					<img
+						src="/templates/main/images/a43.png"
+						alt=""
+					/><!--<span style="background: #000;"></span>-->
+				</li>
+				<li class="li1 litel">
+					<img src="/templates/main/images/a44.png" alt="" /><span
+						>0577-88636607</span
+					>
+				</li>
+			</ul>
+		</div>
+		<!--返回顶部-->
+		<script src="/templates/main/js/backTop.js"></script>
+		<script>
+			$(function () {
+				$(".liwx img").hover(
+					function () {
+						$(this)
+							.next()
+							.css({ display: "block" })
+							.stop(true)
+							.animate({ left: -105 });
+					},
+					function () {
+						$(this).next().animate({ left: 0 }).css({ display: "none" });
+					}
+				);
+
+				$(".litel img").hover(
+					function () {
+						$(this)
+							.next()
+							.css({ display: "block" })
+							.stop(true)
+							.animate({ left: -124 });
+					},
+					function () {
+						$(this).next().animate({ left: 0 }).css({ display: "none" });
+					}
+				);
+			});
+		</script>
+
+		<!--banner脚本-->
+
+		<script src="/templates/main/js/jquery.flexslider-min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				/*新闻选项卡*/
+				function TabSelect(tab, con, addClass, obj) {
+					var $_self = obj;
+					var $_nav = $(tab);
+					$_nav.removeClass(addClass), $_self.addClass(addClass);
+					var $_index = $_nav.index($_self);
+					var $_con = $(con);
+					$_con.hide(), $_con.eq($_index).show();
+				}
+				$(".con1-rig-top p a").hover(function () {
+					TabSelect(".con1-rig-top p a", ".con1-rig-con ul", "active", $(this));
+				});
+				$(".con1-rig-top p a").eq(0).trigger("hover");
+				/*点击滑动*/
+				window.requestAnimFrame = (function () {
+					return (
+						window.requestAnimationFrame ||
+						window.webkitRequestAnimationFrame ||
+						window.mozRequestAnimationFrame ||
+						function (callback) {
+							window.setTimeout(callback, 1000 / 60);
+						}
+					);
+				})();
+
+				function BoxScroll(el, btn, num) {
+					var oBox = $(el),
+						aLi = oBox.find("li"),
+						length = aLi.length,
+						width =
+							parseInt(aLi.eq(0).css("width")) +
+							parseInt(aLi.eq(1).css("margin-left")),
+						BtnLef = $(btn).eq(0),
+						BtnRig = $(btn).eq(1),
+						index = 0;
+					oBox[0].style.width = (length + num) * 300 + "px"; //ul的宽度
+
+					/*克隆*/
+					for (var i = 0; i < num; i++) {
+						aLi.eq(i).clone(true).appendTo(oBox[0]);
+					}
+					var maxWidth = width * length; //滚动距离
+					var globalID;
+					var dir = true;
+					function fn() {
+						if (index < -maxWidth) {
+							index = 0;
+						} else if (index > 0) {
+							index = -maxWidth;
+							console.log(1);
+						}
+						dir
+							? oBox.css({ left: (index -= 2) })
+							: oBox.css({ left: (index += 2) });
+						globalID = requestAnimationFrame(fn);
+					}
+					fn();
+					BtnLef.click(function () {
+						cancelAnimationFrame(globalID);
+						dir = true;
+						fn();
+					});
+					BtnRig.click(function () {
+						cancelAnimationFrame(globalID);
+						dir = false;
+						fn();
+					});
+				}
+
+				BoxScroll(".con5 ul", ".con5-btn span", 4);
+				BoxScroll(".con6 ul", ".con6-btn span", 4);
+			});
+		</script>
+	</body>
+</html>
